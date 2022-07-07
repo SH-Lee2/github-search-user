@@ -1,7 +1,7 @@
-import { ThemeProvider } from "styled-components";
 import "./app.css";
+import Header from "./components/header";
 import GlobalStyle from "./styles/global";
-
+import styled, { ThemeProvider } from "styled-components";
 const theme = {
     colors: {
         blue: "#0079FF",
@@ -25,15 +25,21 @@ const theme = {
         body: "25px",
     },
 };
-
 function App() {
     return (
         <>
             <ThemeProvider theme={theme}>
                 <GlobalStyle />
+                <Container>
+                    <Header />
+                </Container>
             </ThemeProvider>
         </>
     );
 }
 
 export default App;
+
+const Container = styled.div`
+    width: 730px;
+`;
