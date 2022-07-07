@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
 
-const SearchUser = () => {
+const SearchUser = ({ onSearch }) => {
     const [enteredUserName, setEnteredUserName] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSearch(enteredUserName);
+        setEnteredUserName("");
+    };
 
     const handleInput = (e) => {
         setEnteredUserName(e.target.value);
+        if (e.code === "Enter") {
+            handleSubmit(e);
+        }
     };
+
     return (
         <SearchContainer>
             <SearchIcon />
@@ -16,8 +26,13 @@ const SearchUser = () => {
                 placeholder="Search GitHub username..."
                 value={enteredUserName}
                 onChange={handleInput}
+                onKeyDown={handleInput}
             />
-            <button type="submit" disabled={!enteredUserName}>
+            <button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={!enteredUserName}
+            >
                 Search
             </button>
         </SearchContainer>

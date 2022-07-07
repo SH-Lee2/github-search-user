@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./app.css";
 import Header from "./components/header/header";
 import GlobalStyle from "./styles/global";
@@ -26,14 +27,20 @@ const theme = {
         body: "25px",
     },
 };
-function App() {
+function App({ github }) {
+    const [userData, setUserData] = useState([]);
+
+    const handleSearchUser = (userName) => {
+        github.getUser(userName).then((data) => setUserData(data));
+    };
+
     return (
         <>
             <ThemeProvider theme={theme}>
                 <GlobalStyle />
                 <Container>
                     <Header />
-                    <SearchUser />
+                    <SearchUser onSearch={handleSearchUser} />
                 </Container>
             </ThemeProvider>
         </>
