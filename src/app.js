@@ -1,7 +1,8 @@
 import "./app.css";
-import Header from "./components/header";
+import Header from "./components/header/header";
 import GlobalStyle from "./styles/global";
 import styled, { ThemeProvider } from "styled-components";
+import SearchUser from "./components/search_user/search_user";
 const theme = {
     colors: {
         blue: "#0079FF",
@@ -32,6 +33,7 @@ function App() {
                 <GlobalStyle />
                 <Container>
                     <Header />
+                    <SearchUser />
                 </Container>
             </ThemeProvider>
         </>
