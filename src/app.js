@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./app.css";
-import Header from "./components/header/header";
 import GlobalStyle from "./styles/global";
 import styled, { ThemeProvider } from "styled-components";
+import Header from "./components/header/header";
 import SearchUser from "./components/search_user/search_user";
+import User from "./components/user/user";
 const theme = {
     colors: {
         blue: "#0079FF",
@@ -29,9 +30,15 @@ const theme = {
 };
 function App({ github }) {
     const [userData, setUserData] = useState([]);
-
+    const [error, setError] = useState(false);
     const handleSearchUser = (userName) => {
-        github.getUser(userName).then((data) => setUserData(data));
+        github
+            .getUser(userName)
+            .then((data) => {
+                setUserData(data);
+                setError(false);
+            })
+            .catch((e) => setError(true));
     };
 
     return (
@@ -40,7 +47,8 @@ function App({ github }) {
                 <GlobalStyle />
                 <Container>
                     <Header />
-                    <SearchUser onSearch={handleSearchUser} />
+                    <SearchUser onSearch={handleSearchUser} error={error} />
+                    <User userData={userData} />
                 </Container>
             </ThemeProvider>
         </>
@@ -50,5 +58,5 @@ function App({ github }) {
 export default App;
 
 const Container = styled.div`
-    width: 730px;
+    max-width: 730px;
 `;
