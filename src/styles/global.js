@@ -12,7 +12,12 @@ body{
     display : flex;
     justify-content: center;
     align-items : center;
-    padding: 24px;
+    padding: 1.5rem;
+    #root{
+        min-width: 327px;
+        width: 100%;
+        max-width: 730px;
+    }
 }
 `;
 

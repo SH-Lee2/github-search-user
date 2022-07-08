@@ -43,19 +43,20 @@ const SearchUser = ({ onSearch, error }) => {
 export default SearchUser;
 
 const SearchContainer = styled.div`
-    width: 730px;
+    width: 100%;
     height: 69px;
-    padding: 0.59rem 0.625rem 0.59rem 2rem;
-    margin-bottom: 1.5rem;
+    padding: 6.5px 7px 7.5px 16px;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.card};
     border-radius: 15px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
     svg {
         color: ${({ theme }) => theme.colors.button};
-        font-size: 1.5rem;
-        margin-right: 1.375rem;
+        margin-right: 0.3em;
     }
     input,
     button {
@@ -64,10 +65,10 @@ const SearchContainer = styled.div`
     input {
         background-color: transparent;
         border: none;
-        flex: 1;
-        font-size: 1.125rem;
-        line-height: 25px;
+        width: 60%;
         letter-spacing: 1px;
+        font-size: 13px;
+        line-height: 150%;
         &::placeholder {
             color: ${({ theme }) => theme.colors.title};
         }
@@ -79,11 +80,10 @@ const SearchContainer = styled.div`
         background-color: ${({ theme }) => theme.colors.button};
         border-radius: 10px;
         border: none;
-        padding: 0.78rem 1.5rem;
-        font-size: 1rem;
-        line-height: 24px;
+        padding: 12.5px 16px;
         font-weight: 700;
-        margin-left: 1.375rem;
+        font-size: 14px;
+        line-height: 150%;
         color: #ffffff;
         cursor: pointer;
         &:disabled {
@@ -97,8 +97,28 @@ const SearchContainer = styled.div`
     span {
         color: ${({ theme }) => theme.colors.error};
         font-weight: 700;
-        font-size: 0.93rem;
-        line-height: 22px;
-        margin-left: 1.375rem;
+        font-size: 12px;
+        line-height: 150%;
+        margin: 0 1em;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 37rem) {
+        padding: 9.5px 10px 9.5px 32px;
+        margin-bottom: 1.5rem;
+
+        svg {
+            margin-right: 0.6em;
+        }
+        input {
+            font-size: 18px;
+        }
+        span {
+            font-size: 15px;
+        }
+        button {
+            font-size: 16px;
+            padding: 12.5px 24px;
+        }
     }
 `;

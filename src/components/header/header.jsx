@@ -21,7 +21,7 @@ const Header = ({ onSelectTheme }) => {
 export default Header;
 
 const HeaderTag = styled.header`
-    width: 730px;
+    width: 100%;
     height: 38px;
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@ const HeaderTag = styled.header`
     h1 {
         font-weight: 700;
         font-size: 26px;
-        line-height: 39px;
+        line-height: 150%;
     }
     div {
         cursor: pointer;
@@ -44,7 +44,7 @@ const HeaderTag = styled.header`
             margin-right: 1rem;
             font-weight: 700;
             font-size: 13px;
-            line-height: 19px;
+            line-height: 150%;
             letter-spacing: 2.5px;
         }
     }
