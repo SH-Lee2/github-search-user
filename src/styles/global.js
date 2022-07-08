@@ -6,12 +6,13 @@ ${reset}
     box-sizing: border-box;
 }
 body{
+    font-family: "Space Mono";
     background-color : ${({ theme }) => theme.colors.background};
     height: 100vh;
-    display : grid;
-    place-content: center;
-    font-family: "Space Mono";
-
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    padding: 24px;
 }
 `;
 

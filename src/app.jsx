@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./app.css";
 import GlobalStyle from "./styles/global";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/header/header";
