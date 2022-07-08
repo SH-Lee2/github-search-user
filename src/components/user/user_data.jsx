@@ -6,8 +6,10 @@ import LinkIcon from "@mui/icons-material/Link";
 import BusinessIcon from "@mui/icons-material/Business";
 const UserData = ({ userData: { data } }) => {
     const joinDate =
-        "Joined " + new Date(data.created_at).toString().substring(4, 15);
-    console.log(data);
+        "Joined " +
+        new Date(data.created_at) //
+            .toString() //
+            .substring(4, 15); //
 
     return (
         <>
@@ -82,6 +84,7 @@ const UserDataWrapper = styled.div`
 const UserName = styled.h1`
     font-size: ${({ theme }) => theme.fontSize.h1};
     line-height: ${({ theme }) => theme.lineHight.h1};
+    color: ${({ theme }) => theme.colors.title};
     font-weight: 700;
     margin-bottom: 2px;
 `;
@@ -89,13 +92,16 @@ const UserName = styled.h1`
 const UserId = styled.h3`
     font-size: ${({ theme }) => theme.fontSize.h3};
     line-height: ${({ theme }) => theme.lineHight.h3};
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.button};
+    text-align: start;
     margin-bottom: 20px;
 `;
 
 const JoinDate = styled.span`
     font-size: ${({ theme }) => theme.fontSize.body};
     line-height: ${({ theme }) => theme.lineHight.body};
+    color: ${({ theme }) => theme.colors.text};
+    opacity: 0.75;
     padding-top: 8px;
 `;
 const Description = styled.p`
@@ -107,10 +113,10 @@ const Description = styled.p`
 
 const MetaData = styled.div`
     display: flex;
-    width: 480px;
-    padding: 16px 24px;
+    width: 100%;
+    padding: 1rem 1.5rem;
     justify-content: space-between;
-    background-color: ${({ theme }) => theme.colors.black};
+    background-color: ${({ theme }) => theme.colors.box};
     border-radius: 10px;
     margin-bottom: 37px;
     h4 {
@@ -122,6 +128,7 @@ const MetaData = styled.div`
         font-weight: 700;
         font-size: 22px;
         line-height: 33px;
+        color: ${({ theme }) => theme.colors.title};
     }
 `;
 
@@ -138,10 +145,12 @@ const SocialLink = styled.li`
     align-items: center;
     font-size: ${({ theme }) => theme.fontSize.body};
     line-height: ${({ theme }) => theme.lineHight.body};
-    opacity: ${({ available }) => (available ? 1 : 0.75)};
-
+    opacity: ${({ available }) => (available ? 1 : 0.5)};
+    margin-right: 0.5em;
+    color: ${({ theme }) => theme.colors.text};
     &:hover {
         text-decoration: ${({ available }) => available && "underline"};
+        text-underline-offset: 4px;
     }
     svg {
         margin-right: 16px;

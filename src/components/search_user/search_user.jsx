@@ -43,48 +43,49 @@ const SearchUser = ({ onSearch, error }) => {
 export default SearchUser;
 
 const SearchContainer = styled.div`
-    width: 100%;
+    width: 730px;
     height: 69px;
-    padding: 9.5px 10px 9.5px 32px;
-    margin-bottom: 24px;
+    padding: 0.59rem 0.625rem 0.59rem 2rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${({ theme }) => theme.colors.lightBlack};
+    background-color: ${({ theme }) => theme.colors.card};
     border-radius: 15px;
     svg {
-        color: ${({ theme }) => theme.colors.blue};
-        font-size: 24px;
-        margin-right: 22px;
+        color: ${({ theme }) => theme.colors.button};
+        font-size: 1.5rem;
+        margin-right: 1.375rem;
     }
     input,
     button {
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.text};
     }
     input {
         background-color: transparent;
         border: none;
         flex: 1;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 25px;
-        font-weight: 400;
         letter-spacing: 1px;
         &::placeholder {
-            color: ${({ theme }) => theme.colors.white};
+            color: ${({ theme }) => theme.colors.title};
         }
         &:focus {
             outline: none;
         }
     }
     button {
-        background-color: ${({ theme }) => theme.colors.blue};
+        background-color: ${({ theme }) => theme.colors.button};
         border-radius: 10px;
         border: none;
-        padding: 12.5px 24px;
-        font-size: 16px;
+        padding: 0.78rem 1.5rem;
+        font-size: 1rem;
         line-height: 24px;
         font-weight: 700;
-        margin-left: 22px;
+        margin-left: 1.375rem;
+        color: #ffffff;
+        cursor: pointer;
         &:disabled {
             background-color: #60abff;
         }
@@ -94,10 +95,10 @@ const SearchContainer = styled.div`
     }
 
     span {
-        color: ${({ theme }) => theme.colors.red};
+        color: ${({ theme }) => theme.colors.error};
         font-weight: 700;
-        font-size: 15px;
+        font-size: 0.93rem;
         line-height: 22px;
-        margin-left: 22px;
+        margin-left: 1.375rem;
     }
 `;
