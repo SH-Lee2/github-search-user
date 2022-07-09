@@ -11,20 +11,6 @@ export const lightTheme = {
         theme: "#697C9A",
         themeHover: "#222731",
     },
-    fontSize: {
-        h1: "26px",
-        h2: "22px",
-        h3: "16px",
-        h4: "13px",
-        body: "15px",
-    },
-    lineHight: {
-        h1: "38px",
-        h2: "33px",
-        h3: "24px",
-        h4: "20px",
-        body: "25px",
-    },
 };
 export const darkTheme = {
     theme: "dark",
@@ -38,19 +24,5 @@ export const darkTheme = {
         box: "#141D2F",
         theme: "#FFFFFF",
         themeHover: "#90A4D4",
-    },
-    fontSize: {
-        h1: "26px",
-        h2: "22px",
-        h3: "16px",
-        h4: "13px",
-        body: "15px",
-    },
-    lineHight: {
-        h1: "38px",
-        h2: "33px",
-        h3: "24px",
-        h4: "20px",
-        body: "25px",
     },
 };
